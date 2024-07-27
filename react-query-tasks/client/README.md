@@ -1,4 +1,7 @@
 # React Query Tasks
+A simple tasks application written in React with Tanstack Query to interact with the data.
+
+![](docs/screenshot-1.png)
 
 ## Run the API
 
