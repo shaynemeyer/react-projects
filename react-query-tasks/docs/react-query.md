@@ -8,6 +8,7 @@ Tanstack Query is a state management library that simplifies the process of fetc
 [React Query](https://tanstack.com/query/v4/docs/react/overview)
 
 ---
+
 ## Install
 
 ```sh
@@ -15,32 +16,34 @@ npm i @tanstack/react-query
 ```
 
 ---
+
 ## Setup React Query
 
 main.jsx
 
 ```js
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
     <App />
-  </QueryClientProvider>
+  </QueryClientProvider>,
 );
 ```
 
 ---
+
 ## First Query
 
 Items.jsx
 
 ```js
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 const result = useQuery({
-  queryKey: ['tasks'],
-  queryFn: () => customFetch.get('/'),
+  queryKey: ["tasks"],
+  queryFn: () => customFetch.get("/"),
 });
 console.log(result);
 ```
@@ -54,28 +57,29 @@ The unique key you provide is used internally for refetching, caching, and shari
 A query function can be literally any function that returns a promise. The promise that is returned should either resolve the data or throw an error.
 
 ---
+
 ## Error Handling
 
 ```js
 const Items = () => {
   const { isLoading, data, error, isError } = useQuery({
-    queryKey: ['tasks'],
+    queryKey: ["tasks"],
     queryFn: async () => {
-      const { data } = await customFetch.get('/something');
+      const { data } = await customFetch.get("/something");
       return data;
     },
   });
 
   if (isLoading) {
-    return <p style={{ marginTop: '1rem ' }}>Loading...</p>;
+    return <p style={{ marginTop: "1rem " }}>Loading...</p>;
   }
 
   if (isError) {
-    return <p style={{ marginTop: '1rem ' }}>there was an error...</p>;
+    return <p style={{ marginTop: "1rem " }}>there was an error...</p>;
   }
 
   return (
-    <div className='items'>
+    <div className="items">
       {data.taskList.map((item) => {
         return <SingleItem key={item.id} item={item} />;
       })}
@@ -86,13 +90,14 @@ export default Items;
 ```
 
 ---
+
 ## Create Task
 
 Form.jsx
 
 ```js
 const { mutate: createTask, isLoading } = useMutation({
-  mutationFn: (taskTitle) => customFetch.post('/', { title: taskTitle }),
+  mutationFn: (taskTitle) => customFetch.post("/", { title: taskTitle }),
 });
 
 const handleSubmit = (e) => {
@@ -102,13 +107,14 @@ const handleSubmit = (e) => {
 ```
 
 ---
+
 ## useMutation Helper Options
 
 useMutation comes with some helper options that allow quick and easy side-effects at any stage during the mutation lifecycle. These come in handy for both invalidating and refetching queries after mutations
 
 ```js
 const { mutate: createTask, isLoading } = useMutation({
-  mutationFn: (taskTitle) => customFetch.post('/', { title: taskTitle }),
+  mutationFn: (taskTitle) => customFetch.post("/", { title: taskTitle }),
   onSuccess: () => {
     // do something
   },

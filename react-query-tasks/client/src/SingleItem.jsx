@@ -5,24 +5,24 @@ const SingleItem = ({ item }) => {
   const { deleteTask, deleteTaskLoading } = useDeleteTask();
 
   return (
-    <div className='single-item'>
+    <div className="single-item">
       <input
-        type='checkbox'
+        type="checkbox"
         checked={item.isDone}
-        onChange={() => editTask({taskId: item.id, isDone: !item.isDone})}
+        onChange={() => editTask({ taskId: item.id, isDone: !item.isDone })}
       />
       <p
         style={{
-          textTransform: 'capitalize',
-          textDecoration: item.isDone && 'line-through',
+          textTransform: "capitalize",
+          textDecoration: item.isDone && "line-through",
         }}
       >
         {item.title}
       </p>
       <button
-        className='btn remove-btn'
-        type='button'
-        onClick={() => deleteTask({taskId: item.id})}
+        className="btn remove-btn"
+        type="button"
+        onClick={() => deleteTask({ taskId: item.id })}
         disabled={deleteTaskLoading}
       >
         delete

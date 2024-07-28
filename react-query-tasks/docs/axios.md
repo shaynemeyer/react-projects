@@ -15,7 +15,7 @@ GET: This HTTP method is used to retrieve data from a server. When a client send
 ```js
 // HTTP GET example
 try {
-  const response = await axios.get('/api/data');
+  const response = await axios.get("/api/data");
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -25,7 +25,7 @@ try {
 ```js
 // HTTP GET example
 axios
-  .get('/api/data')
+  .get("/api/data")
   .then((response) => {
     console.log(response.data);
   })
@@ -39,7 +39,7 @@ POST: The POST method is used to send data to a server to create or update a res
 ```js
 // HTTP POST example
 try {
-  const response = await axios.post('/api/data', { name: 'John', age: 30 });
+  const response = await axios.post("/api/data", { name: "John", age: 30 });
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -51,7 +51,7 @@ PATCH: This method is similar to the POST method, but it is used to update only 
 ```js
 // HTTP PATCH example
 try {
-  const response = await axios.patch('/api/data/1', { age: 31 });
+  const response = await axios.patch("/api/data/1", { age: 31 });
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -63,7 +63,7 @@ DELETE: The DELETE method is used to remove a resource from a server. When a cli
 ```js
 // HTTP DELETE example
 try {
-  const response = await axios.delete('/api/data/1');
+  const response = await axios.delete("/api/data/1");
   console.log(response.data);
 } catch (error) {
   console.error(error);

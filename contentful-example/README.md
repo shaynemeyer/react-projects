@@ -3,6 +3,7 @@
 An example using contentful cms.
 
 ---
+
 ## Create `.env`
 
 ```sh
@@ -11,6 +12,7 @@ VITE_ACCESS_TOKEN=<YOUR CONTENTFUL ACCESS TOKEN>
 ```
 
 ---
+
 ## Install and Setup
 
 ```sh
