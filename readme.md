@@ -8,3 +8,5 @@ A collection of React Projects that I use to test out different libaries such as
 
 - [Tasks with React Query](/react-query-tasks/)
 - [Contentful CMS Example](/contentful-example/)
+- [MixMaster](/mixmaster/)
+- [RTK Store](/rtk-store/)
