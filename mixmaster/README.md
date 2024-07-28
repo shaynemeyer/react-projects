@@ -1,5 +1,7 @@
 # MixMaster
 
+![](docs/images/mixmaster-screenshot.png)
+
 ## Install and Setup
 
 ```sh
