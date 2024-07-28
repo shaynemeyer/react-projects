@@ -2,6 +2,8 @@
 
 An example using contentful cms.
 
+![](docs/images/contentful-screenshot.png)
+
 ---
 
 ## Create `.env`
