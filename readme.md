@@ -10,3 +10,4 @@ A collection of React Projects that I use to test out different libaries such as
 - [Contentful CMS Example](/contentful-example/)
 - [MixMaster](/mixmaster/)
 - [RTK Store](/rtk-store/)
+- [Comfy Store](/comfy-store/)
