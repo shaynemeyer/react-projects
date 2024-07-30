@@ -11,3 +11,4 @@ export { default as ProductsGrid } from "./ProductsGrid";
 export { default as ProductsContainer } from "./ProductsContainer";
 export { default as Filters } from "./Forms/Filters";
 export { default as PaginationContainer } from "./PaginationContainer";
+export { default as Loading } from "./Loading";
