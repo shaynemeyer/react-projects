@@ -1,12 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsMoonFill, BsSunFill } from 'react-icons/bs';
 
+const themes = {
+  winter: 'winter',
+  dracula: 'dracula',
+};
+
+const getThemeFromLocalStorage = () => {
+  return localStorage.getItem('theme') || themes.winter;
+};
+
 function ToggleTheme() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(getThemeFromLocalStorage());
 
   const handleTheme = () => {
-    setTheme(!theme);
+    const { winter, dracula } = themes;
+    const newTheme = theme === winter ? dracula : winter;
+    setTheme(newTheme);
   };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <div className="navbar-end">
