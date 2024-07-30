@@ -1,5 +1,4 @@
-import React from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   HomeLayout,
   Landing,
@@ -12,17 +11,19 @@ import {
   Login,
   Checkout,
   Orders,
-} from './pages';
-import { ErrorElement } from './components';
+} from "./pages";
+import { ErrorElement } from "./components";
 
 // loaders
-import { loader as landingLoader } from './pages/Landing';
+import { loader as landingLoader } from "./pages/Landing";
+import { loader as singleProductLoader } from "./pages/SingleProduct";
+import { loader as productLoader } from "./pages/Products";
 
 // actions
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
@@ -33,35 +34,39 @@ const router = createBrowserRouter([
         loader: landingLoader,
       },
       {
-        path: 'products',
+        path: "products",
         element: <Products />,
+        errorElement: <ErrorElement />,
+        loader: productLoader,
       },
       {
-        path: 'products/:id',
+        path: "products/:id",
         element: <SingleProduct />,
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
       },
       {
-        path: 'cart',
+        path: "cart",
         element: <Cart />,
       },
-      { path: 'about', element: <About /> },
+      { path: "about", element: <About /> },
       {
-        path: 'checkout',
+        path: "checkout",
         element: <Checkout />,
       },
       {
-        path: 'orders',
+        path: "orders",
         element: <Orders />,
       },
     ],
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login />,
     errorElement: <Error />,
   },
   {
-    path: '/register',
+    path: "/register",
     element: <Register />,
     errorElement: <Error />,
   },
