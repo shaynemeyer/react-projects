@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { BsCart3 } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
@@ -5,6 +6,8 @@ import NavLinks from "./NavLinks";
 import ToggleTheme from "./ToggleTheme";
 
 function Navbar() {
+  const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
+
   return (
     <nav className="bg-base-200">
       <div className="navbar align-element ">
@@ -41,7 +44,7 @@ function Navbar() {
             <div className="indicator">
               <BsCart3 className="h-6 w-6" />
               <span className="badge badge-sm badge-primary indicator-item">
-                8
+                {numItemsInCart}
               </span>
             </div>
           </NavLink>
