@@ -4,11 +4,23 @@ import { formatPrice, customFetch, generateAmountOptions } from "../utils";
 import { useState } from "react";
 import { addItem } from "../features/cart/cartSlice";
 
-export const loader = async ({ params }) => {
-  const response = await customFetch(`/products/${params.id}`);
-  const product = response.data.data;
-  return { product };
+const singleProductQuery = (id) => {
+  return {
+    queryKey: ["singleProduct", id],
+    queryFn: () => customFetch.get(`/products/${id}`),
+  };
 };
+
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const response = await queryClient.ensureQueryData(
+      singleProductQuery(params.id)
+    );
+
+    const product = response.data.data;
+    return { product };
+  };
 
 function SingleProduct() {
   const { product } = useLoaderData();
