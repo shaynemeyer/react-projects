@@ -1,28 +1,13 @@
-import { useState, useEffect } from 'react';
-import { BsMoonFill, BsSunFill } from 'react-icons/bs';
-
-const themes = {
-  winter: 'winter',
-  dracula: 'dracula',
-};
-
-const getThemeFromLocalStorage = () => {
-  return localStorage.getItem('theme') || themes.winter;
-};
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../../features/user/userSlice";
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
 
 function ToggleTheme() {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage());
+  const dispatch = useDispatch();
 
   const handleTheme = () => {
-    const { winter, dracula } = themes;
-    const newTheme = theme === winter ? dracula : winter;
-    setTheme(newTheme);
+    dispatch(toggleTheme());
   };
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
 
   return (
     <div className="navbar-end">
