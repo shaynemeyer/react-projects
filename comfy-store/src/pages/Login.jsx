@@ -1,6 +1,5 @@
-import React from 'react';
-import { FormInput, SubmitBtn } from '../components';
-import { Form, Link } from 'react-router-dom';
+import { FormInput, SubmitBtn } from "../components";
+import { Form, Link } from "react-router-dom";
 
 function Login() {
   return (
