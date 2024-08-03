@@ -199,6 +199,8 @@ export const updateProductImageAction = async (
   }
 };
 
+/* Favorites */
+
 export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
   const user = await getAuthUser();
 
@@ -367,3 +369,20 @@ export const fetchProductRating = async (productId: string) => {
     count: result[0]?._count.rating ?? 0,
   };
 };
+
+/* Cart */
+export const fetchCartItems = async () => {};
+
+const fetchProduct = async () => {};
+
+export const fetchOrCreateCart = async () => {};
+
+const updateOrCreateCartItem = async () => {};
+
+export const updateCart = async () => {};
+
+export const addToCartAction = async () => {};
+
+export const removeCartItemAction = async () => {};
+
+export const updateCartItemAction = async () => {};
