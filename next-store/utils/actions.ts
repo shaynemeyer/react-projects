@@ -21,6 +21,12 @@ const getAuthUser = async () => {
   return user;
 };
 
+const getAdminUser = async () => {
+  const user = await getAuthUser();
+  if (user.id !== process.env.ADMIN_USER_ID) redirect("/");
+  return user;
+};
+
 export const fetchFeaturedProducts = async () => {
   const products = await db.product.findMany({
     where: {
@@ -81,4 +87,14 @@ export const createProductAction = async (
   }
 
   redirect("/admin/products");
+};
+
+export const fetchAdminProducts = async () => {
+  await getAdminUser();
+  const products = await db.product.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return products;
 };
