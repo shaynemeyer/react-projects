@@ -22,6 +22,7 @@ export const FirstColumn = ({
     </div>
   );
 };
+
 export const SecondColumn = ({
   name,
   company,
