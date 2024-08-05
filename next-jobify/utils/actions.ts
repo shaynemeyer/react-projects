@@ -20,8 +20,10 @@ export async function createJobAction(
 ): Promise<JobType | null> {
   // await new Promise((resolve) => setTimeout(resolve, 3000));
   const userId = authenticateAndRedirect();
+
   try {
     createAndEditJobSchema.parse(values);
+
     const job: JobType = await prisma.job.create({
       data: {
         ...values,
@@ -29,6 +31,7 @@ export async function createJobAction(
         clerkId: userId,
       },
     });
+
     return job;
   } catch (error) {
     console.error(error);
