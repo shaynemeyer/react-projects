@@ -157,6 +157,7 @@ export async function updateJobAction(
         ...values,
       },
     });
+
     return job;
   } catch (error) {
     return null;
