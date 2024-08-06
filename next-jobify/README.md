@@ -14,6 +14,12 @@ A jobs application written in NextJS with TypeScript.
 
 ![](docs/images/edit-job.png)
 
+## Charts
+
+![](docs/images/charts.png)
+
+---
+
 - [Clerk](https://www.clerk.com/) for User Management & Authentication
 - [Supabase](https://supabase.com/) for Database Management (Postgres)
 - [Prisma](https://www.prisma.io/) for ORM
