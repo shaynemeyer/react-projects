@@ -11,3 +11,5 @@ A collection of React Projects that I use to test out different libaries such as
 - [MixMaster](/mixmaster/)
 - [RTK Store](/rtk-store/)
 - [Comfy Store](/comfy-store/)
+- [Next Jobify](/next-jobify/)
+- [Next Store](/next-store/)
