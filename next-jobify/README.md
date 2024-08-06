@@ -1,16 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Jobify
+
+A jobs application written in NextJS with TypeScript.
+
+- [Clerk](https://www.clerk.com/) for User Management & Authentication
+- [Supabase](https://supabase.com/) for Database Management (Postgres)
+- [Prisma](https://www.prisma.io/) for ORM
+- [Shadcn](https://ui.shadcn.com/) for Components & Themeing
+- [TailwindCSS](https://tailwindcss.com/) for Styles
+- [recharts](https://recharts.org/en-US/) for graphs and charts
+- [Zod](https://zod.dev/) for schema validation for forms
+
+---
 
 ## Getting Started
 
-Clone this repository.
+1. Clone this repository.
 
-Install dependencies
+2. Install dependencies
 
 ```bash
 npm i
 ```
 
-Run the development server:
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -22,9 +34,10 @@ npm run dev
 
 In the `prisma/seed.js` file change the clerkId to your users clerkId.
 
-Run the seed script
+### Run the seed script
 
 ```bash
 node prisma/seed.js
 ```
+
 
