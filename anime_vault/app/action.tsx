@@ -1,5 +1,6 @@
 "use server";
 
+import AnimeCard, { AnimeProp } from "@/components/AnimeCard";
 import { ANIME_API_PATH } from "@/lib/constants";
 
 export async function fetchAnime(
@@ -12,6 +13,7 @@ export async function fetchAnime(
   );
   const data = await response.json();
 
-  console.log(data);
-  return data;
+  return data.map((item: AnimeProp, index: number) => (
+    <AnimeCard key={item.id} anime={item} index={index} />
+  ));
 }
